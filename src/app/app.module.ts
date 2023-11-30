@@ -9,6 +9,8 @@ import { InactivePostsComponent } from './components/inactive-posts/inactive-pos
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { PostCardComponent } from './components/post-card/post-card.component';
 import { DettagliComponent } from './components/dettagli/dettagli.component';
+import { UsersComponent } from './components/users/users.component';
+import { UsersInfoComponent } from './components/users-info/users-info.component';
 
 const routes: Route[] = [
     {
@@ -22,6 +24,17 @@ const routes: Route[] = [
     {
         path: 'inactivePosts',
         component: InactivePostsComponent,
+       
+    },
+    {
+        path: 'user',
+        component: UsersComponent,
+        children: [
+            {
+                path: ':id',
+                component: UsersInfoComponent
+            }
+        ]
        
     },
     {
@@ -46,7 +59,9 @@ const routes: Route[] = [
         InactivePostsComponent,
         NavbarComponent,
         PostCardComponent,
-        DettagliComponent
+        DettagliComponent,
+        UsersComponent,
+        UsersInfoComponent
     ],
     imports: [BrowserModule, RouterModule.forRoot(routes)],
     providers: [],
