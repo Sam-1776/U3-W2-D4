@@ -1,6 +1,6 @@
 <div class="container">
     <ul class="list-group" *ngFor="let user of user, let i = index">
-        <li class="list-group-item" [routerLink]="[i]" routerLinkActive="active">{{user.name}}</li>
+        <li class="list-group-item" [routerLink]="[user.name]" routerLinkActive="active">{{user.name}}</li>
       </ul>
 </div>
 <hr>

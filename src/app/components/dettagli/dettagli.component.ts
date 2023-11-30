@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Post } from 'src/app/models/post';
 import { PostsService } from 'src/app/service/posts.service';
 import { ActivatedRoute } from '@angular/router';
@@ -13,8 +13,8 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class DettagliComponent implements OnInit {
 
-  @Input() post!: Post;
-  @Input() i!: number;
+  post: Post | undefined;
+  i!: number;
 
 
 
@@ -23,7 +23,7 @@ export class DettagliComponent implements OnInit {
   ngOnInit(): void {
     
     this.route.params.subscribe(parm =>{
-       this.i = parm['id']
+       this.i = +parm['id']
        console.log(this.i);
        this.post = this.postSrv.getInfo(this.i)
    })

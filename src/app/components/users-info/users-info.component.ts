@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { User } from 'src/app/models/user';
 import { ActivatedRoute } from '@angular/router';
 import { UsersService } from 'src/app/service/users.service';
@@ -9,16 +9,16 @@ import { UsersService } from 'src/app/service/users.service';
   styleUrls: ['./users-info.component.scss']
 })
 export class UsersInfoComponent implements OnInit {
-  @Input() user!: User;
-  @Input() i!: number;
+  user!: User | undefined
+  nome!: string
 
   constructor(private userSrv: UsersService, private route: ActivatedRoute ) { }
 
   ngOnInit(): void {
     this.route.params.subscribe(parm =>{
-      this.i = parm['id']
-      console.log(this.i);
-      this.user = this.userSrv.getInfo(this.i)
+      this.nome = parm['id']
+      console.log(this.nome);
+      this.user = this.userSrv.getInfo(this.nome)
   })
   }
 

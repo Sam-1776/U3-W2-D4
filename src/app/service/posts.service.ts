@@ -61,9 +61,9 @@ export class PostsService {
         return this.posts.find(post => post.id == id) as Post;
     }
 
-    getInfo( i: number){
-        console.log(this.posts[i]);
-        
-        return this.posts[i]
+    getInfo( id: number){
+        let postSingolo: Post | undefined = this.posts.find((post) => post.id == id);
+        console.log(postSingolo);
+        return postSingolo;
     }
 }

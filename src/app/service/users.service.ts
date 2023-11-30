@@ -27,8 +27,9 @@ export class UsersService {
     return this.user;
 }
 
-getInfo( i: number){
-  console.log(this.user[i]);
-  return this.user[i]
+getInfo( nome: string){
+  let utenteSingolo: User | undefined = this.user.find((post) => post.name == nome);
+  console.log(utenteSingolo);
+  return utenteSingolo;
 }
 }
