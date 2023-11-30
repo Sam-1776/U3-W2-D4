@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "Esercizio": {
+    "esercizio": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -69,10 +69,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "Esercizio:build:production"
+              "browserTarget": "esercizio:build:production"
             },
             "development": {
-              "browserTarget": "Esercizio:build:development"
+              "browserTarget": "esercizio:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -80,7 +80,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "Esercizio:build"
+            "browserTarget": "esercizio:build"
           }
         },
         "test": {
@@ -103,5 +103,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "089f457d-cb38-4324-a82a-af4bb5ad6c8b"
   }
 }
